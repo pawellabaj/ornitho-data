@@ -1,4 +1,4 @@
-package pl.com.labaj.ornitho.grid.io;
+package pl.com.labaj.ornitho.io;
 
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;

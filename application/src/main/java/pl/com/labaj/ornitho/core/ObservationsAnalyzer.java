@@ -1,12 +1,12 @@
-package pl.com.labaj.ornitho.grid.core;
+package pl.com.labaj.ornitho.core;
 
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
-import pl.com.labaj.ornitho.grid.io.PageLoader;
-import pl.com.labaj.ornitho.grid.model.DateRange;
-import pl.com.labaj.ornitho.grid.model.Location;
-import pl.com.labaj.ornitho.grid.model.Observations;
+import pl.com.labaj.ornitho.io.PageLoader;
+import pl.com.labaj.ornitho.model.DateRange;
+import pl.com.labaj.ornitho.model.Location;
+import pl.com.labaj.ornitho.model.Observations;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

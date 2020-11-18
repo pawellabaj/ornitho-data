@@ -1,13 +1,13 @@
-package pl.com.labaj.ornitho.grid.core;
+package pl.com.labaj.ornitho.core;
 
 import io.jenetics.jpx.GPX;
 import io.jenetics.jpx.Metadata;
 import io.jenetics.jpx.Track;
 import io.jenetics.jpx.WayPoint;
 import org.w3c.dom.Document;
-import pl.com.labaj.ornitho.grid.io.LocusXMLProvider;
-import pl.com.labaj.ornitho.grid.model.Location;
-import pl.com.labaj.ornitho.grid.model.Observations;
+import pl.com.labaj.ornitho.io.LocusXMLProvider;
+import pl.com.labaj.ornitho.model.Location;
+import pl.com.labaj.ornitho.model.Observations;
 
 import java.text.SimpleDateFormat;
 import java.util.List;

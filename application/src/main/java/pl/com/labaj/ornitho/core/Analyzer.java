@@ -1,4 +1,4 @@
-package pl.com.labaj.ornitho.grid.core;
+package pl.com.labaj.ornitho.core;
 
 import org.jsoup.nodes.Document;
 

@@ -1,4 +1,4 @@
-package pl.com.labaj.ornitho.grid.io;
+package pl.com.labaj.ornitho.io;
 
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Jsoup;

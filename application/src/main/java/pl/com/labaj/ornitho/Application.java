@@ -1,15 +1,15 @@
-package pl.com.labaj.ornitho.grid;
+package pl.com.labaj.ornitho;
 
-import pl.com.labaj.ornitho.grid.core.Analyzer;
-import pl.com.labaj.ornitho.grid.core.GPXBuilder;
-import pl.com.labaj.ornitho.grid.core.LocationAnalyzer;
-import pl.com.labaj.ornitho.grid.core.ObservationsAnalyzer;
-import pl.com.labaj.ornitho.grid.core.PositionParser;
-import pl.com.labaj.ornitho.grid.io.GPXWriter;
-import pl.com.labaj.ornitho.grid.io.PageLoader;
-import pl.com.labaj.ornitho.grid.model.Observations;
+import pl.com.labaj.ornitho.core.Analyzer;
+import pl.com.labaj.ornitho.core.GPXBuilder;
+import pl.com.labaj.ornitho.core.LocationAnalyzer;
+import pl.com.labaj.ornitho.core.ObservationsAnalyzer;
+import pl.com.labaj.ornitho.core.PositionParser;
+import pl.com.labaj.ornitho.io.GPXWriter;
+import pl.com.labaj.ornitho.io.PageLoader;
+import pl.com.labaj.ornitho.model.Observations;
 
-public class Grid {
+public class Application {
 
     private final Analyzer<Observations> observationsAnalyzer;
     private final PageLoader pageLoader;
@@ -28,12 +28,12 @@ public class Grid {
         var gpxBuilder = new GPXBuilder();
         var gpxGenerator = new GPXWriter();
 
-        var grid = new Grid(pageLoader, resultsAnalyzer, gpxBuilder, gpxGenerator);
+        var grid = new Application(pageLoader, resultsAnalyzer, gpxBuilder, gpxGenerator);
 
         grid.run(args[0]);
     }
 
-    public Grid(PageLoader pageLoader, Analyzer<Observations> observationsAnalyzer, GPXBuilder gpxBuilder, GPXWriter gpxWriter) {
+    public Application(PageLoader pageLoader, Analyzer<Observations> observationsAnalyzer, GPXBuilder gpxBuilder, GPXWriter gpxWriter) {
         this.pageLoader = pageLoader;
         this.observationsAnalyzer = observationsAnalyzer;
         this.gpxBuilder = gpxBuilder;
