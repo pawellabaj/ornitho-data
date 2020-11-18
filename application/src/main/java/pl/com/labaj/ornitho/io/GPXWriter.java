@@ -1,9 +1,9 @@
-package pl.com.labaj.ornitho.grid.io;
+package pl.com.labaj.ornitho.io;
 
 import io.jenetics.jpx.GPX;
 import lombok.extern.slf4j.Slf4j;
-import pl.com.labaj.ornitho.grid.model.DateRange;
-import pl.com.labaj.ornitho.grid.model.Observations;
+import pl.com.labaj.ornitho.model.DateRange;
+import pl.com.labaj.ornitho.model.Observations;
 
 import java.io.IOException;
 import java.nio.file.Path;

@@ -1,4 +1,4 @@
-package pl.com.labaj.ornitho.grid.model;
+package pl.com.labaj.ornitho.model;
 
 import io.jenetics.jpx.Point;
 import io.jenetics.jpx.TrackSegment;

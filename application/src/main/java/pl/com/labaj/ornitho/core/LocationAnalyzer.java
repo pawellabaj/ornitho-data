@@ -1,4 +1,4 @@
-package pl.com.labaj.ornitho.grid.core;
+package pl.com.labaj.ornitho.core;
 
 import com.grum.geocalc.Point;
 import io.jenetics.jpx.TrackSegment;
@@ -6,7 +6,7 @@ import io.jenetics.jpx.WayPoint;
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import pl.com.labaj.ornitho.grid.model.Location;
+import pl.com.labaj.ornitho.model.Location;
 
 import java.util.stream.Stream;
 
