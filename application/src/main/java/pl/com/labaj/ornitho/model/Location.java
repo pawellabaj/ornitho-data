@@ -1,12 +1,12 @@
 package pl.com.labaj.ornitho.model;
 
-import io.jenetics.jpx.Point;
-import io.jenetics.jpx.TrackSegment;
+import com.grum.geocalc.BoundingArea;
+import com.grum.geocalc.Point;
 import lombok.Value;
 
 @Value
 public class Location {
     String name;
     Point center;
-    TrackSegment segment;
+    BoundingArea boundingArea;
 }

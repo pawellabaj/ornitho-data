@@ -1,0 +1,3 @@
+<extensions xmlns:locus="http://www.locusmap.eu">
+    <locus:rtePointActio>pass_place</locus:rtePointActio>
+</extensions>

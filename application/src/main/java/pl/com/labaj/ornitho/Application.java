@@ -1,20 +1,21 @@
 package pl.com.labaj.ornitho;
 
-import pl.com.labaj.ornitho.core.Analyzer;
-import pl.com.labaj.ornitho.core.GPXBuilder;
-import pl.com.labaj.ornitho.core.LocationAnalyzer;
-import pl.com.labaj.ornitho.core.ObservationsAnalyzer;
-import pl.com.labaj.ornitho.core.PositionParser;
-import pl.com.labaj.ornitho.io.GPXWriter;
-import pl.com.labaj.ornitho.io.PageLoader;
+import pl.com.labaj.ornitho.builder.gpx.GPXBuilder;
+import pl.com.labaj.ornitho.io.FileUtils;
+import pl.com.labaj.ornitho.io.gpx.GPXWriter;
+import pl.com.labaj.ornitho.io.page.PageLoader;
 import pl.com.labaj.ornitho.model.Observations;
+import pl.com.labaj.ornitho.parser.LocationParser;
+import pl.com.labaj.ornitho.parser.ObservationsParser;
+import pl.com.labaj.ornitho.parser.PageReader;
+import pl.com.labaj.ornitho.parser.PositionParser;
+import pl.com.labaj.ornitho.parser.SubjectParser;
 
 public class Application {
 
-    private final Analyzer<Observations> observationsAnalyzer;
-    private final PageLoader pageLoader;
+    private final PageReader<Observations> observationsReader;
     private final GPXBuilder gpxBuilder;
-    private final GPXWriter gpxWriter;
+    private final FileUtils fileUtils;
 
     public static void main(String[] args) {
         if (args.length == 0) {
@@ -22,29 +23,34 @@ public class Application {
         }
 
         var pageLoader = new PageLoader();
+
         var positionParser = new PositionParser();
-        var locationAnalyzer = new LocationAnalyzer(positionParser);
-        var resultsAnalyzer = new ObservationsAnalyzer(locationAnalyzer, pageLoader);
-        var gpxBuilder = new GPXBuilder();
-        var gpxGenerator = new GPXWriter();
+        var locationParser = new LocationParser(positionParser);
 
-        var grid = new Application(pageLoader, resultsAnalyzer, gpxBuilder, gpxGenerator);
+        var subjectParser = new SubjectParser();
+        var gpxWriter = new GPXWriter();
+        var locationReader = new PageReader<>(pageLoader, locationParser);
 
-        grid.run(args[0]);
+        var observationsParser = new ObservationsParser(locationReader, subjectParser);
+        var observationsReader = new PageReader<>(pageLoader, observationsParser);
+
+        var fileUtils = new FileUtils();
+        var gpxBuilder = new GPXBuilder(fileUtils, gpxWriter);
+
+        var application = new Application(observationsReader, fileUtils, gpxBuilder);
+
+        application.run(args[0]);
     }
 
-    public Application(PageLoader pageLoader, Analyzer<Observations> observationsAnalyzer, GPXBuilder gpxBuilder, GPXWriter gpxWriter) {
-        this.pageLoader = pageLoader;
-        this.observationsAnalyzer = observationsAnalyzer;
+    public Application(PageReader<Observations> observationsReader, FileUtils fileUtils, GPXBuilder gpxBuilder) {
+        this.observationsReader = observationsReader;
         this.gpxBuilder = gpxBuilder;
-        this.gpxWriter = gpxWriter;
+        this.fileUtils = fileUtils;
     }
 
     private void run(String pageUrl) {
-        var observationsDocument = pageLoader.load(pageUrl);
-        var observations = observationsAnalyzer.apply(observationsDocument);
-
-        var gpx = gpxBuilder.build(observations);
-        gpxWriter.save(observations, gpx);
+        var observations = observationsReader.read(pageUrl);
+        var path = fileUtils.getPath(observations, "gpx");
+        gpxBuilder.buildAndSave(observations, path);
     }
 }
