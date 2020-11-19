@@ -1,4 +1,4 @@
-package pl.com.labaj.ornitho.io.gpx;
+package pl.com.labaj.ornitho.builder.gpx;
 
 import com.grum.geocalc.BoundingArea;
 import com.grum.geocalc.Point;
@@ -9,6 +9,7 @@ import io.jenetics.jpx.TrackSegment;
 import io.jenetics.jpx.WayPoint;
 import org.w3c.dom.Document;
 import pl.com.labaj.ornitho.io.FileUtils;
+import pl.com.labaj.ornitho.io.gpx.GPXWriter;
 import pl.com.labaj.ornitho.model.Location;
 import pl.com.labaj.ornitho.model.Observations;
 

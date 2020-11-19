@@ -1,7 +1,7 @@
 package pl.com.labaj.ornitho;
 
+import pl.com.labaj.ornitho.builder.gpx.GPXBuilder;
 import pl.com.labaj.ornitho.io.FileUtils;
-import pl.com.labaj.ornitho.io.gpx.GPXBuilder;
 import pl.com.labaj.ornitho.io.gpx.GPXWriter;
 import pl.com.labaj.ornitho.io.page.PageLoader;
 import pl.com.labaj.ornitho.model.Observations;
