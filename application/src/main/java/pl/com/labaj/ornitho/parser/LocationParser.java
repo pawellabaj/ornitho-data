@@ -19,6 +19,7 @@ public class LocationParser implements DocumentParser<Location> {
         this.positionParser = positionParser;
     }
 
+    @Override
     public Location parse(Document document) {
         var locationCell = document.select(LOCATION_CELL_SELECTOR);
         return buildLocation(locationCell.first());
