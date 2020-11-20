@@ -31,6 +31,7 @@ public class ObservationsParser implements DocumentParser<Observations> {
         this.subjectParser = subjectParser;
     }
 
+    @Override
     public Observations parse(Document document) {
         var infoRows = document.select(INFO_ROWS_SELECTOR);
 
