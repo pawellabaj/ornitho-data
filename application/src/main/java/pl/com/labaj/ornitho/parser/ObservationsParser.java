@@ -21,7 +21,7 @@ public class ObservationsParser implements DocumentParser<Observations> {
 
     private static final String INFO_ROWS_SELECTOR = "#td-main-table > tbody > tr > td > table > tbody > tr";
     private static final String LOCATION_LINKS_SELECTOR = "#td-main-table > tbody > tr > td > div.listContainer > div.listSubmenu > a";
-    private final SimpleDateFormat dateFormat = new SimpleDateFormat("dMMMMyyyy", new Locale("pl", "PL"));
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat("dLLLLyyyy", new Locale("pl", "PL"));
 
     private final PageReader<Location> locationReader;
     private final SubjectParser subjectParser;

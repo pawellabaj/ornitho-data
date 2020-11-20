@@ -4,6 +4,7 @@ import lombok.NonNull;
 import lombok.Value;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 @Value
 public class Observations {
@@ -17,4 +18,8 @@ public class Observations {
 
     @NonNull
     List<Location> locations;
+
+    public Stream<Location> locations() {
+        return locations.stream();
+    }
 }
