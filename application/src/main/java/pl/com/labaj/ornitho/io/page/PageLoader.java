@@ -1,10 +1,13 @@
-package pl.com.labaj.ornitho.io;
+package pl.com.labaj.ornitho.io.page;
 
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import pl.com.labaj.ornitho.io.OrnithoIOException;
 
 import java.io.IOException;
+
+import static java.lang.String.format;
 
 @Slf4j
 public class PageLoader {
@@ -18,7 +21,7 @@ public class PageLoader {
         try {
             return connection.get();
         } catch (IOException e) {
-            throw new RuntimeException("Cannot get page content from " + pageUrl, e);
+            throw new OrnithoIOException(format("Cannot get page content from %s", pageUrl), e);
         }
     }
 }
