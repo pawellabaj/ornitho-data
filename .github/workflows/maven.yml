@@ -1,7 +1,4 @@
-# This workflow will build a Java project with Maven
-# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
-
-name: Java CI with Maven
+name: CI worfklfow
 
 on:
   push:
@@ -14,52 +11,47 @@ on:
 
 jobs:
   build:
-
+    env: 
+      runSonar: ${{ !contains(github.href, 'dependabot') }}
     runs-on: ubuntu-latest
-
     steps:
-      - name: Inject slug/short variables
-        uses: rlespinasse/github-slug-action@v3.x
-
       - name: Check out the code
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-
       - name: Set up JDK
         uses: actions/setup-java@v1
         with:
           java-version: 11
-
       - name: Cache Maven packages
         uses: actions/cache@v2
         with:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
-
-      - name: Cache SonarCloud packages
-        uses: actions/cache@v1
-        with:
-          path: ~/.sonar/cache
-          key: ${{ runner.os }}-sonar
-          restore-keys: ${{ runner.os }}-sonar
-
       - name: Compile the code
         run: mvn clean compile test-compile
-
       - name: Run unit tests
         run: mvn -B test -Dmaven.test.failure.ignore=true
-
       - name: Build a test report
         uses: ScaCap/action-surefire-report@v1.0.5
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           fail_if_no_tests: false
           fail_on_test_failures: true
-
+          
+      - name : Check if run Sonar Analysis
+        run: echo "$GITHUB_REF -> $runSonar" 
+      - name: Cache SonarCloud packages
+        if: ${{ env.runSonar }}
+        uses: actions/cache@v1
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
       - name: Run Sonar analysis
+        if: ${{ env.runSonar }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify -Psonar -Dmaven.test.skip=true -Dsonar.projectKey=pawellabaj_ornitho-data -Dsonar.verbose=true
+        run: mvn -B verify -Psonar -Dmaven.test.skip=true -Dsonar.projectKey=pawellabaj_ornitho-data -Dsonar.verbose=false
