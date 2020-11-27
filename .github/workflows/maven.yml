@@ -68,5 +68,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify -Psonar -Dmaven.test.skip=true -Dsonar.branch=${{ env.GITHUB_REF_SLUG }} -Dsonar.branch.target=master -X
+        run: mvn -B verify -Psonar -Dmaven.test.skip=true -Dsonar.branch=${{ env.GITHUB_REF_SLUG }} -Dsonar.branch.target=master -X -Dsonar.projectKey=ornitho-data -Dsonar.project.key=AAAAA
 
