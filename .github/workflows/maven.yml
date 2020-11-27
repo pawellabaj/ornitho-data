@@ -58,17 +58,8 @@ jobs:
           fail_if_no_tests: false
           fail_on_test_failures: true
 
-      - name: Check master with Sonar
-        if: ${{ env.GITHUB_REF_SLUG ==  'master' }}
+      - name: Run Sonar analysis
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify -Psonar -Dmaven.test.skip=true -Dsonar.branch.name=master -X
-
-      - name: Check non-master with Sonar
-        if: ${{ env.GITHUB_REF_SLUG !=  'master' }}
-        uses: sonarsource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
+        run: mvn -B verify -Psonar -Dmaven.test.skip=true -Dsonar.projectKey=pawellabaj_ornitho-data -Dsonar.verbose=true
