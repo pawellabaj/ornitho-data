@@ -57,7 +57,7 @@ jobs:
           fail_on_test_failures: true
 
       - name: Check master with Sonar
-        if: ${{ env.GITHUB_REF_SLUG ==  'refsmaster' }}
+        if: ${{ env.GITHUB_REF_SLUG ==  'master' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
