@@ -92,7 +92,7 @@
                 <sonar.projectKey>ornitho-data</sonar.projectKey>
                 <sonar.componentKey>ornitho-data:${artifactId}</sonar.componentKey>
                 <sonar.moduleKey>ornitho-data:${artifactId}</sonar.moduleKey>
-                <sonar.coverage.exclusions>**/pom.xml<sonar.coverage.exclusions>
+                <sonar.coverage.exclusions>**/pom.xml</sonar.coverage.exclusions>
             </properties>
 
             <build>
