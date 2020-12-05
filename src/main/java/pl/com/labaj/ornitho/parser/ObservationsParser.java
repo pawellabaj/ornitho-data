@@ -39,7 +39,7 @@ public class ObservationsParser implements DocumentParser<Observations> {
 
         var locationLinks = document.select(LOCATION_LINKS_SELECTOR);
         var locations = parseLocations(locationLinks);
-
+      
         LOGGER.info("{} locations for {}", locations.size(), subject);
 
         return new Observations(subject, description, dateRange, locations);

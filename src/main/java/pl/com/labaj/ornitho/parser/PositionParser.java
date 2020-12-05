@@ -21,6 +21,7 @@ public class PositionParser {
     private Coordinate parseCoordinate(String coordinate) {
         try {
             var matcher = COORDINATE_PATTERN.matcher(coordinate.trim());
+
             //noinspection ResultOfMethodCallIgnored
             matcher.find();
 
@@ -30,9 +31,9 @@ public class PositionParser {
             var hemisphere = matcher.group("hemisphere");
 
             var sign = sign(hemisphere);
+          
             return fromDMS(parseOrZero(degrees) * sign,
                     parseOrZero(minutes),
-                    parseOrZero(seconds));
         } catch (NumberFormatException | IllegalStateException e) {
             throw new OrnithoParserException(format("Cannot parse [%s]", coordinate), e);
         }
