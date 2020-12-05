@@ -58,7 +58,6 @@ public class Application {
     void run(String pageUrl) {
         var observations = observationsReader.read(pageUrl);
         var path = pathGenerator.getPath(observations, "gpx");
-
         gpxBuilder.buildAndSave(observations, path);
     }
 }
