@@ -2,10 +2,10 @@ package pl.com.labaj.ornitho.model;
 
 import lombok.Value;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Value
 public class DateRange {
-    Date from;
-    Date to;
+    LocalDate from;
+    LocalDate to;
 }

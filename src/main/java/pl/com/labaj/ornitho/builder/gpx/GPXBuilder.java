@@ -7,8 +7,7 @@ import io.jenetics.jpx.Metadata;
 import io.jenetics.jpx.Track;
 import io.jenetics.jpx.TrackSegment;
 import io.jenetics.jpx.WayPoint;
-import org.w3c.dom.Document;
-import pl.com.labaj.ornitho.io.FileUtils;
+import pl.com.labaj.ornitho.io.gpx.GPXExtensions;
 import pl.com.labaj.ornitho.io.gpx.GPXWriter;
 import pl.com.labaj.ornitho.model.Location;
 import pl.com.labaj.ornitho.model.Observations;
@@ -22,16 +21,12 @@ import static java.util.stream.Collectors.toList;
 
 public class GPXBuilder {
 
+    private final GPXExtensions gpxExtensions;
     private final GPXWriter gpxWriter;
 
-    private final Document waypointExtensions;
-    private final Document lineExtensions;
-
-    public GPXBuilder(FileUtils fileUtils, GPXWriter gpxWriter) {
+    public GPXBuilder(GPXExtensions gpxExtensions, GPXWriter gpxWriter) {
+        this.gpxExtensions = gpxExtensions;
         this.gpxWriter = gpxWriter;
-
-        waypointExtensions = fileUtils.loadDocument("gpx/waypoint-extensions.xml");
-        lineExtensions = fileUtils.loadDocument("gpx/line-extensions.xml");
     }
 
     public void buildAndSave(Observations observations, Path path) {
@@ -69,7 +64,7 @@ public class GPXBuilder {
                 .forEach(builder::addSegment);
 
         var track = builder
-                .extensions(lineExtensions)
+                .extensions(gpxExtensions.getLineExtensions())
                 .build();
         return singletonList(track);
     }
@@ -82,7 +77,7 @@ public class GPXBuilder {
                 .lon(center.longitude)
                 .name(location.getName())
                 .sym("z-ico02")
-                .extensions(waypointExtensions)
+                .extensions(gpxExtensions.getWaypointExtensions())
                 .build();
     }
 

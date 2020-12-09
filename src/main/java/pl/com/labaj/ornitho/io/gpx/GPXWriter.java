@@ -11,10 +11,11 @@ import static java.lang.String.format;
 
 @Slf4j
 public class GPXWriter {
-    public void save(GPX gpx, Path path) {
+    public boolean save(GPX gpx, Path path) {
         try {
-            LOGGER.debug("Write GPX to {}", path);
+            LOGGER.info("Write GPX to {}", path);
             GPX.write(gpx, path);
+            return true;
         } catch (IOException e) {
             throw new OrnithoIOException(format("Cannot write GPX to %s file", path.getFileName()), e);
         }

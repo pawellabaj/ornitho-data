@@ -37,6 +37,6 @@ public class LocationParser implements DocumentParser<Location> {
 
     private Point parsePosition(String position) {
         var coordinates = position.split("/");
-        return positionParser.parse(coordinates);
+        return positionParser.parse(coordinates[1], coordinates[0]);
     }
 }

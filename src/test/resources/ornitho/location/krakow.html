@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- HEADER START HERE -->
+<head>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="./apple-touch-icon.png" type="image/png" sizes="57x57"/>
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png"/>
+    <link href="https://cdnfiles1.biolovision.net/common/css/graph_style_a.css" rel="stylesheet" type="text/css"/>
+    <link href="https://cdnfiles2.biolovision.net/www.ornitho.pl/css/styles_d.css" rel="stylesheet" type="text/css"/>
+    <link href="https://cdnfiles1.biolovision.net/common/css/btn-sprite_42.css" rel="stylesheet" type="text/css"/>
+    <link href="https://cdnfiles1.biolovision.net/common/css/cookieconsent.min.css" rel="stylesheet" type="text/css"/>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Pozycja lokalizacji - www.ornitho.pl</title>
+    <style type="text/css">
+        @media screen and (-webkit-min-device-pixel-ratio:0), screen and (min-resolution: 0.1dpi) { html { margin-left: 1px; } }
+
+.shadow1-n,
+.shadow2-n,
+.shadow3-n{
+	position: relative;
+	left: -1px;
+	top: -1px;
+}
+
+.container 
+{
+	text-align: left;
+	position: relative;
+	left: -2px;
+	top: -2px;
+	background: black;
+}
+.shadow1-n {background: #8a8a8a;}
+.shadow2-n {background: #454545;}
+.shadow3-n {background: #000000;}
+
+.shadow1-s,
+.shadow2-s,
+.shadow3-s{
+	position: relative;
+	left: -1px;
+	top: -1px;
+}
+
+.container 
+{
+	text-align: left;
+	position: relative;
+	left: -2px;
+	top: -2px;
+	background: black;
+}
+.shadow1-s {background: #dcccab;}
+.shadow2-s {background: #e9c886;}
+.shadow3-s {background: #f6c562;}
+
+    </style>
+    <script type="application/javascript"></script>
+
+</head>
+
+<body style="margin: 0; text-align: center;overflow-y: scroll;" onload="if (window.OLinit){OLinit();}" onunload="if (window.unload_map){unload_map();}">
+<div id="ornithobody" style="margin-left: auto; margin-right: auto; width:980px; text-align: left;">
+    <!-- start main table -->
+    <!--[if LT IE 10]>
+    <div class="ie6">
+        Używasz nieaktualnej przeglądarki <a class="ie6" href="http://ie.microsoft.com/">Zaktualizuj przeglądarkę by szybciej i bezpieczniej korzystać z
+        Internetu</a>.
+    </div>
+    <![endif]-->
+
+    <div style="z-index:10; position:relative; width:980px; height:1px; top:0px; left:0px;">
+
+        <div style="z-index:2;position:absolute;top:0px;left:0px;"><img alt="" border="0"
+                                                                        src="https://cdnfiles2.biolovision.net/www.ornitho.pl/images/header/Bozycki22-8827.jpg"
+                                                                        width="980" height="200"/></div>
+        <div style="z-index:2; position: absolute; top: 0px; left: 0px;"><img alt="" border="0"
+                                                                              src="https://cdnfiles2.biolovision.net/www.ornitho.pl/images/ornitho_pl.png"
+                                                                              width="304" height="44" style="margin-top: 114px;margin-left: 52px;"></div>
+        <div style="z-index:80; position: absolute; top: 170px; left: 570px">
+            <div style="background-color:#FAF9F4;width:400px;padding:5px;height:20px;line-height:20px;">
+                <div style="margin-left:2px;margin-top:2px">
+                    <div class="langButton"
+                         onmouseover="this.className='langButtonOver'"
+                         onmouseout="this.className='langButton'"
+                         onclick="location.href='http://www.ornitho.pl/index.php?m_id=52&amp;id=297795&amp;langu=fr'">
+                        <a class="bvLangu" href="http://www.ornitho.pl/index.php?m_id=52&amp;id=297795&amp;langu=fr">fr</a>
+                    </div>
+                    <div class="langButton"
+                         onmouseover="this.className='langButtonOver'"
+                         onmouseout="this.className='langButton'"
+                         onclick="location.href='http://www.ornitho.pl/index.php?m_id=52&amp;id=297795&amp;langu=de'">
+                        <a class="bvLangu" href="http://www.ornitho.pl/index.php?m_id=52&amp;id=297795&amp;langu=de">de</a>
+                    </div>
+                    <div class="langButton"
+                         onmouseover="this.className='langButtonOver'"
+                         onmouseout="this.className='langButton'"
+                         onclick="location.href='http://www.ornitho.pl/index.php?m_id=52&amp;id=297795&amp;langu=en'">
+                        <a class="bvLangu" href="http://www.ornitho.pl/index.php?m_id=52&amp;id=297795&amp;langu=en">en</a>
+                    </div>
+                    <div class="langButtonSelected">pl</div>
+                </div>
+                <form style="float:left;margin-left:0.2rem" id="btn-logout" method="POST" action="https://www.ornitho.pl/index.php"><input
+                        type="hidden" name="m_id" value="1"><input
+                        type="hidden" name="logout" value="1">
+                </form>
+                <div style="line-height:20px;font-weight:bold;margin-right:20px" class="bodytext">Paweł&nbsp;Łabaj <a class="alink"
+                                                                                                                      onclick="document.getElementById('btn-logout').submit();"
+                                                                                                                      href="#">[wyloguj]</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="maincontent" style="z-index:1; position:relative; width:980px; top:199px; left:0px;">
+        <table border="0" width="100%" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+            <tr>
+                <td colspan="2" bgcolor="#FAF9F4" style="height:10px;"></td>
+            </tr>
+            <tr>
+                <td bgcolor="#FAF9F4" valign="top">
+                    <!-- LEFT START HERE -->
+
+                    <script type="application/javascript"></script>
+
+                    <!-- LEFT START HERE -->
+
+                    <table style="text-align: left; width: 200px;" cellspacing="0" cellpadding="0" border="0" width="200">
+                        <tr>
+                            <td class="bvMenuHead" onmouseover="this.className='bvMenuHeadOFF'"
+                                onmouseout="this.className='bvMenuHead'"
+                                onclick="location.href='https://www.ornitho.pl/index.php?m_id=1'"><a class="bvMenuHead"
+                                                                                                     href="https://www.ornitho.pl/index.php?m_id=1">Strona
+                                główna</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                     onmouseout="this.className='bvMenuSub'"
+                                     onclick="location.href='https://www.ornitho.pl/index.php?m_id=1126&amp;c=PARTNER'">
+                                    <div style="float: left;height:14px">&nbsp;</div>
+                                    <div>Partnerzy</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr onclick="javascript:toggleSub('510',0);">
+                            <td class="bvMenuTitle">
+                                <div style="float:left;"><img alt="" src="https://cdnfiles2.biolovision.net/www.ornitho.pl/images/arrow_open.gif" name="i510"
+                                                              border="0" height="12" width="18"/></div>
+                                <div style="float:left;">Przegląd obserwacji</div>
+                            </td>
+                        </tr>
+                        <tr id="t510">
+                            <td>
+                                <div onmouseover="this.className='bvMenuSubTitleOFF'" onmouseout="this.className='bvMenuSubTitle'"
+                                     onclick="javascript:toggleSub('49',1);" class="bvMenuSubTitle">
+                                    &nbsp;<img alt="" src="https://cdnfiles2.biolovision.net/www.ornitho.pl/images/bullet_minus.gif" name="i49" border="0"
+                                               height="9" width="9"/>&nbsp;Obserwacje
+                                </div>
+                                <div id="t49">
+                                    <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                         onmouseout="this.className='bvMenuSub'"
+                                         onclick="location.href='https://www.ornitho.pl/index.php?m_id=4&amp;sp_DOffset=2'">
+                                        <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                        <div>Ostatnie 2 dni</div>
+                                    </div>
+                                    <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                         onmouseout="this.className='bvMenuSub'"
+                                         onclick="location.href='https://www.ornitho.pl/index.php?m_id=5&amp;sp_DOffset=5'">
+                                        <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                        <div>Ostatnie 5 dni</div>
+                                    </div>
+                                    <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                         onmouseout="this.className='bvMenuSub'"
+                                         onclick="location.href='https://www.ornitho.pl/index.php?m_id=33&amp;sp_Cat%5Bnever%5D=1&amp;sp_Cat%5Bveryrare%5D=1&amp;sp_Cat%5Brare%5D=1&amp;sp_FDisplay=SPECIES_PLACE_DATE'">
+                                        <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                        <div>Ostatnie obserwacje rzadkości</div>
+                                    </div>
+                                    <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                         onmouseout="this.className='bvMenuSub'"
+                                         onclick="location.href='https://www.ornitho.pl/index.php?m_id=31&amp;sp_DChoice=all&amp;sp_OnlyMyData=1&amp;sp_SChoice=all&amp;sp_PChoice=all'">
+                                        <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                        <div>Wszystkie moje obserwacje</div>
+                                    </div>
+                                    <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                         onmouseout="this.className='bvMenuSub'"
+                                         onclick="location.href='https://www.ornitho.pl/index.php?m_id=8'">
+                                        <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                        <div>Wyszukiwarka</div>
+                                    </div>
+                                    <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                         onmouseout="this.className='bvMenuSub'"
+                                         onclick="location.href='https://www.ornitho.pl/index.php?m_id=32&amp;sp_FChoice=synth'">
+                                        <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                        <div>Podsumowanie dzienne</div>
+                                    </div>
+                                    <div onmouseover="this.className='bvMenuSubTitleOFF'" onmouseout="this.className='bvMenuSubTitle'"
+                                         onclick="javascript:toggleSub('12',1);" class="bvMenuSubTitle">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<img alt="" src="https://cdnfiles2.biolovision.net/www.ornitho.pl/images/bullet_minus.gif"
+                                                                     name="i12" border="0" height="9" width="9"/>&nbsp;Rozmieszczenie
+                                    </div>
+                                    <div id="t12">
+                                        <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                             onmouseout="this.className='bvMenuSub'"
+                                             onclick="location.href='https://www.ornitho.pl/index.php?m_id=30097'">
+                                            <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                            <div>wójcik 2020</div>
+                                        </div>
+                                        <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                             onmouseout="this.className='bvMenuSub'"
+                                             onclick="location.href='https://www.ornitho.pl/index.php?m_id=30098'">
+                                            <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                            <div>zaroślówka 2020</div>
+                                        </div>
+                                        <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                             onmouseout="this.className='bvMenuSub'"
+                                             onclick="location.href='https://www.ornitho.pl/index.php?m_id=30100'">
+                                            <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                            <div>sokół wędrowny 2020</div>
+                                        </div>
+                                        <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                             onmouseout="this.className='bvMenuSub'"
+                                             onclick="location.href='https://www.ornitho.pl/index.php?m_id=30101'">
+                                            <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                            <div>dzięcioł zielonosiwy 2020</div>
+                                        </div>
+                                        <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                             onmouseout="this.className='bvMenuSub'"
+                                             onclick="location.href='https://www.ornitho.pl/index.php?m_id=30102'">
+                                            <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                            <div>dzierlatka 2020</div>
+                                        </div>
+                                        <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                             onmouseout="this.className='bvMenuSub'"
+                                             onclick="location.href='https://www.ornitho.pl/index.php?m_id=30103'">
+                                            <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                            <div>błotniak łąkowy 2020</div>
+                                        </div>
+                                        <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                             onmouseout="this.className='bvMenuSub'"
+                                             onclick="location.href='https://www.ornitho.pl/index.php?m_id=30104'">
+                                            <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                            <div>kobczyk 2020</div>
+                                        </div>
+                                        <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                             onmouseout="this.className='bvMenuSub'"
+                                             onclick="location.href='https://www.ornitho.pl/index.php?m_id=30105'">
+                                            <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                            <div>orlik krzykliwy 2020</div>
+                                        </div>
+                                        <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                             onmouseout="this.className='bvMenuSub'"
+                                             onclick="location.href='https://www.ornitho.pl/index.php?m_id=30106'">
+                                            <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                            <div>dzięcioł białoszyi 2020</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                     onmouseout="this.className='bvMenuSub'"
+                                     onclick="location.href='https://www.ornitho.pl/index.php?m_id=7'">
+                                    <div style="float: left;height:14px">&nbsp;-&nbsp;</div>
+                                    <div>Galeria zdjęć i dźwięków</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr onclick="javascript:toggleSub('9',0);">
+                            <td class="bvMenuTitle">
+                                <div style="float:left;"><img alt="" src="https://cdnfiles2.biolovision.net/www.ornitho.pl/images/arrow_open.gif" name="i9"
+                                                              border="0" height="12" width="18"/></div>
+                                <div style="float:left;">Moje obserwacje</div>
+                            </td>
+                        </tr>
+                        <tr id="t9">
+                            <td>
+                                <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                     onmouseout="this.className='bvMenuSub'"
+                                     onclick="location.href='https://www.ornitho.pl/index.php?m_id=10&amp;backlink=rset&amp;taxo_group=o'">
+                                    <div style="float: left;height:14px">&nbsp;-&nbsp;</div>
+                                    <div>Dodaj obserwacje</div>
+                                </div>
+                                <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                     onmouseout="this.className='bvMenuSub'"
+                                     onclick="location.href='https://www.ornitho.pl/index.php?m_id=11'">
+                                    <div style="float: left;height:14px">&nbsp;-&nbsp;</div>
+                                    <div>Moja lista gatunków</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr onclick="javascript:toggleSub('20',0);">
+                            <td class="bvMenuTitle">
+                                <div style="float:left;"><img alt="" src="https://cdnfiles2.biolovision.net/www.ornitho.pl/images/arrow_open.gif" name="i20"
+                                                              border="0" height="12" width="18"/></div>
+                                <div style="float:left;">Informacje</div>
+                            </td>
+                        </tr>
+                        <tr id="t20">
+                            <td>
+                                <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                     onmouseout="this.className='bvMenuSub'"
+                                     onclick="location.href='https://www.ornitho.pl/index.php?m_id=1164'">
+                                    <div style="float: left;height:14px">&nbsp;-&nbsp;</div>
+                                    <div>Aktualności</div>
+                                </div>
+                                <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                     onmouseout="this.className='bvMenuSub'"
+                                     onclick="location.href='https://www.ornitho.pl/index.php?m_id=155'">
+                                    <div style="float: left;height:14px">&nbsp;-&nbsp;</div>
+                                    <div>Uprawnienia użytkowników</div>
+                                </div>
+                                <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                     onmouseout="this.className='bvMenuSub'"
+                                     onclick="location.href='https://www.ornitho.pl/index.php?m_id=156'">
+                                    <div style="float: left;height:14px">&nbsp;-&nbsp;</div>
+                                    <div>Gatunki automatycznie ukrywane</div>
+                                </div>
+                                <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                     onmouseout="this.className='bvMenuSub'"
+                                     onclick="location.href='https://www.ornitho.pl/index.php?m_id=1185&amp;item=6'">
+                                    <div style="float: left;height:14px">&nbsp;-&nbsp;</div>
+                                    <div>Regulamin ornitho.pl</div>
+                                </div>
+                                <div onmouseover="this.className='bvMenuSubTitleOFF'" onmouseout="this.className='bvMenuSubTitle'"
+                                     onclick="javascript:toggleSub('1182',1);" class="bvMenuSubTitle">
+                                    &nbsp;<img alt="" src="https://cdnfiles2.biolovision.net/www.ornitho.pl/images/bullet_minus.gif" name="i1182" border="0"
+                                               height="9" width="9"/>&nbsp;Porady
+                                </div>
+                                <div id="t1182">
+                                    <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                         onmouseout="this.className='bvMenuSub'"
+                                         onclick="location.href='https://www.ornitho.pl/index.php?m_id=1183&amp;item=7'">
+                                        <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                        <div>Aplikacja NaturaList</div>
+                                    </div>
+                                    <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                         onmouseout="this.className='bvMenuSub'"
+                                         onclick="location.href='https://www.ornitho.pl/index.php?m_id=1184&amp;item=4'">
+                                        <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                        <div>Kryteria lęgowości</div>
+                                    </div>
+                                    <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                         onmouseout="this.className='bvMenuSub'"
+                                         onclick="location.href='https://www.ornitho.pl/index.php?m_id=1192&amp;item=3'">
+                                        <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                        <div>Pełne listy</div>
+                                    </div>
+                                </div>
+                                <div onmouseover="this.className='bvMenuSubTitleOFF'" onmouseout="this.className='bvMenuSubTitle'"
+                                     onclick="javascript:toggleSub('67',1);" class="bvMenuSubTitle">
+                                    &nbsp;<img alt="" src="https://cdnfiles2.biolovision.net/www.ornitho.pl/images/bullet_minus.gif" name="i67" border="0"
+                                               height="9" width="9"/>&nbsp;Pomoc
+                                </div>
+                                <div id="t67">
+                                    <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                         onmouseout="this.className='bvMenuSub'"
+                                         onclick="location.href='https://www.ornitho.pl/index.php?m_id=1180&amp;item=5'">
+                                        <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                        <div>Jak korzystać z ornitho.pl?</div>
+                                    </div>
+                                    <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                         onmouseout="this.className='bvMenuSub'"
+                                         onclick="location.href='https://www.ornitho.pl/index.php?m_id=41'">
+                                        <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                        <div>Objaśnienia symboli i skrótów</div>
+                                    </div>
+                                    <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                         onmouseout="this.className='bvMenuSub'"
+                                         onclick="location.href='https://www.ornitho.pl/index.php?m_id=36'">
+                                        <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                        <div>FAQ</div>
+                                    </div>
+                                </div>
+                                <div onmouseover="this.className='bvMenuSubTitleOFF'" onmouseout="this.className='bvMenuSubTitle'"
+                                     onclick="javascript:toggleSub('68',1);" class="bvMenuSubTitle">
+                                    &nbsp;<img alt="" src="https://cdnfiles2.biolovision.net/www.ornitho.pl/images/bullet_plus.gif" name="i68" border="0"
+                                               height="9" width="9"/>&nbsp;Statystyki
+                                </div>
+                                <div style="display: none" id="t68">
+                                    <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                         onmouseout="this.className='bvMenuSub'"
+                                         onclick="location.href='https://www.ornitho.pl/index.php?m_id=23'">
+                                        <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                        <div>Ogólne statystyki</div>
+                                    </div>
+                                    <div onmouseover="this.className='bvMenuSubTitleOFF'" onmouseout="this.className='bvMenuSubTitle'"
+                                         onclick="javascript:toggleSub('69',1);" class="bvMenuSubTitle">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<img alt="" src="https://cdnfiles2.biolovision.net/www.ornitho.pl/images/bullet_plus.gif"
+                                                                     name="i69" border="0" height="9" width="9"/>&nbsp;Statystyki obserwacji
+                                    </div>
+                                    <div style="display: none" id="t69">
+                                        <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                             onmouseout="this.className='bvMenuSub'"
+                                             onclick="location.href='https://www.ornitho.pl/index.php?m_id=79'">
+                                            <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                            <div>Rozkład obserwacji w czasie</div>
+                                        </div>
+                                        <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                             onmouseout="this.className='bvMenuSub'"
+                                             onclick="location.href='https://www.ornitho.pl/index.php?m_id=71'">
+                                            <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                            <div>Rozmieszczenie w gminach</div>
+                                        </div>
+                                        <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                             onmouseout="this.className='bvMenuSub'"
+                                             onclick="location.href='https://www.ornitho.pl/index.php?m_id=1178'">
+                                            <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                            <div>Statystyki w gminach</div>
+                                        </div>
+                                        <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                             onmouseout="this.className='bvMenuSub'"
+                                             onclick="location.href='https://www.ornitho.pl/index.php?m_id=72'">
+                                            <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                            <div>Rozmieszczenie w kraju</div>
+                                        </div>
+                                    </div>
+                                    <div onmouseover="this.className='bvMenuSubTitleOFF'" onmouseout="this.className='bvMenuSubTitle'"
+                                         onclick="javascript:toggleSub('24',1);" class="bvMenuSubTitle">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<img alt="" src="https://cdnfiles2.biolovision.net/www.ornitho.pl/images/bullet_plus.gif"
+                                                                     name="i24" border="0" height="9" width="9"/>&nbsp;Statystyki obserwatorów
+                                    </div>
+                                    <div style="display: none" id="t24">
+                                        <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                             onmouseout="this.className='bvMenuSub'"
+                                             onclick="location.href='https://www.ornitho.pl/index.php?m_id=73'">
+                                            <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                            <div>Informacje ogólne</div>
+                                        </div>
+                                        <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                             onmouseout="this.className='bvMenuSub'"
+                                             onclick="location.href='https://www.ornitho.pl/index.php?m_id=78'">
+                                            <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                            <div>Rozmieszczenie w gminach</div>
+                                        </div>
+                                        <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                             onmouseout="this.className='bvMenuSub'"
+                                             onclick="location.href='https://www.ornitho.pl/index.php?m_id=76'">
+                                            <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                            <div>Rozmieszczenie w kraju</div>
+                                        </div>
+                                    </div>
+                                    <div onmouseover="this.className='bvMenuSubTitleOFF'" onmouseout="this.className='bvMenuSubTitle'"
+                                         onclick="javascript:toggleSub('28',1);" class="bvMenuSubTitle">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<img alt="" src="https://cdnfiles2.biolovision.net/www.ornitho.pl/images/bullet_plus.gif"
+                                                                     name="i28" border="0" height="9" width="9"/>&nbsp;Statystyki gatunków
+                                    </div>
+                                    <div style="display: none" id="t28">
+                                        <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                             onmouseout="this.className='bvMenuSub'"
+                                             onclick="location.href='https://www.ornitho.pl/index.php?m_id=82'">
+                                            <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                            <div>Statystyki ogólne</div>
+                                        </div>
+                                        <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                             onmouseout="this.className='bvMenuSub'"
+                                             onclick="location.href='https://www.ornitho.pl/index.php?m_id=81'">
+                                            <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                            <div>Szczegóły gatunku</div>
+                                        </div>
+                                        <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                             onmouseout="this.className='bvMenuSub'"
+                                             onclick="location.href='https://www.ornitho.pl/index.php?m_id=75'">
+                                            <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                            <div>Rozmieszczenie w gminach</div>
+                                        </div>
+                                        <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                             onmouseout="this.className='bvMenuSub'"
+                                             onclick="location.href='https://www.ornitho.pl/index.php?m_id=77'">
+                                            <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                            <div>Rozmieszczenie w kraju</div>
+                                        </div>
+                                    </div>
+                                    <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                         onmouseout="this.className='bvMenuSub'"
+                                         onclick="location.href='https://www.ornitho.pl/index.php?m_id=1650&amp;project=8_9'">
+                                        <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                        <div>Statystyki #zostanwdomu</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr onclick="javascript:toggleSub('200',0);">
+                            <td class="bvMenuTitle">
+                                <div style="float:left;"><img alt="" src="https://cdnfiles2.biolovision.net/www.ornitho.pl/images/arrow_open.gif" name="i200"
+                                                              border="0" height="12" width="18"/></div>
+                                <div style="float:left;">Administracja</div>
+                            </td>
+                        </tr>
+                        <tr id="t200">
+                            <td>
+                                <div onmouseover="this.className='bvMenuSubTitleOFF'" onmouseout="this.className='bvMenuSubTitle'"
+                                     onclick="javascript:toggleSub('253',1);" class="bvMenuSubTitle">
+                                    &nbsp;<img alt="" src="https://cdnfiles2.biolovision.net/www.ornitho.pl/images/bullet_plus.gif" name="i253" border="0"
+                                               height="9" width="9"/>&nbsp;Biolovision
+                                </div>
+                                <div style="display: none" id="t253">
+                                    <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                         onmouseout="this.className='bvMenuSub'"
+                                         onclick="location.href='https://www.ornitho.pl/index.php?m_id=43'">
+                                        <div style="float: left;height:14px">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;</div>
+                                        <div>Dokumentacja API</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr onclick="javascript:toggleSub('499',0);">
+                            <td class="bvMenuTitle">
+                                <div style="float:left;"><img alt="" src="https://cdnfiles2.biolovision.net/www.ornitho.pl/images/arrow_open.gif" name="i499"
+                                                              border="0" height="12" width="18"/></div>
+                                <div style="float:left;">Atlas i monitoring</div>
+                            </td>
+                        </tr>
+                        <tr id="t499">
+                            <td>
+                                <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                     onmouseout="this.className='bvMenuSub'"
+                                     onclick="location.href='https://www.ornitho.pl/index.php?m_id=505'">
+                                    <div style="float: left;height:14px">&nbsp;-&nbsp;</div>
+                                    <div>Atlas rozmieszczenia ptaków lęgowych</div>
+                                </div>
+                                <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                     onmouseout="this.className='bvMenuSub'"
+                                     onclick="location.href='https://www.ornitho.pl/index.php?m_id=620'">
+                                    <div style="float: left;height:14px">&nbsp;-&nbsp;</div>
+                                    <div>Mapa obecności gatunków</div>
+                                </div>
+                                <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                     onmouseout="this.className='bvMenuSub'"
+                                     onclick="location.href='https://www.ornitho.pl/index.php?m_id=300'">
+                                    <div style="float: left;height:14px">&nbsp;-&nbsp;</div>
+                                    <div>Podsumowania lokalne</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr onclick="javascript:toggleSub('20013',0);">
+                            <td class="bvMenuTitle">
+                                <div style="float:left;"><img alt="" src="https://cdnfiles2.biolovision.net/www.ornitho.pl/images/arrow_open.gif" name="i20013"
+                                                              border="0" height="12" width="18"/></div>
+                                <div style="float:left;">Regiony ornitologiczne</div>
+                            </td>
+                        </tr>
+                        <tr id="t20013">
+                            <td>
+                                <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                     onmouseout="this.className='bvMenuSub'"
+                                     onclick="location.href='https://www.ornitho.pl/index.php?m_id=20012'">
+                                    <div style="float: left;height:14px">&nbsp;-&nbsp;</div>
+                                    <div>Podlasie</div>
+                                </div>
+                                <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                     onmouseout="this.className='bvMenuSub'"
+                                     onclick="location.href='https://www.ornitho.pl/index.php?m_id=20014'">
+                                    <div style="float: left;height:14px">&nbsp;-&nbsp;</div>
+                                    <div>Kujawy</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr onclick="javascript:toggleSub('25',0);">
+                            <td class="bvMenuTitle">
+                                <div style="float:left;"><img alt="" src="https://cdnfiles2.biolovision.net/www.ornitho.pl/images/arrow_open.gif" name="i25"
+                                                              border="0" height="12" width="18"/></div>
+                                <div style="float:left;">Moje konto</div>
+                            </td>
+                        </tr>
+                        <tr id="t25">
+                            <td>
+                                <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                     onmouseout="this.className='bvMenuSub'"
+                                     onclick="location.href='https://www.ornitho.pl/index.php?m_id=26'">
+                                    <div style="float: left;height:14px">&nbsp;-&nbsp;</div>
+                                    <div>Dane osobowe</div>
+                                </div>
+                                <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                     onmouseout="this.className='bvMenuSub'"
+                                     onclick="location.href='https://www.ornitho.pl/index.php?m_id=62'">
+                                    <div style="float: left;height:14px">&nbsp;-&nbsp;</div>
+                                    <div>E-mail i hasło</div>
+                                </div>
+                                <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                     onmouseout="this.className='bvMenuSub'"
+                                     onclick="location.href='https://www.ornitho.pl/index.php?m_id=27'">
+                                    <div style="float: left;height:14px">&nbsp;-&nbsp;</div>
+                                    <div>Personalizacja strony</div>
+                                </div>
+                                <div class="bvMenuSub" onmouseover="this.className='bvMenuSubOver'"
+                                     onmouseout="this.className='bvMenuSub'"
+                                     onclick="location.href='https://www.ornitho.pl/index.php?m_id=29'">
+                                    <div style="float: left;height:14px">&nbsp;-&nbsp;</div>
+                                    <div>Mój profil</div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- LEFT END HERE -->
+                </td>
+                <td width="100%" valign="top">
+                    <script src="https://cdnfiles1.biolovision.net/common/js/jquery-3.4.1.min.js" type="application/javascript"></script>
+                    <div id="ajaxErrorMessageDisplay"></div>
+                    <script type="application/javascript"></script>
+                    <!-- HEADER STOP HERE -->
+                    <table id="td-main-table" border="0" width="780" cellspacing="0" cellpadding="0">
+
+                        <tr>
+                            <!-- start middle column -->
+                            <td>
+                                <div class="pageTitle">Pozycja lokalizacji</div>
+
+
+                                <div class="box" style="margin:0.5rem">
+                                    <table border="0" cellspacing="0" cellpadding="4">
+                                        <tr>
+                                            <td width="80" style="vertical-align:top" class="box">Lokalizacja</td>
+                                            <td class="box"><b>Kraków [E8N1F1]</b><br/><br/>19&#176;50'45.77'' E / 50&#176;05'29.99'' N<br/>Wysokość [m] : 248
+                                                metry
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="80" class="box">Gmina</td>
+                                            <td class="box"><b>Kraków</b> / <b>małopolskie</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" class="box">
+                                                <nobr>&nbsp;<a
+                                                        href="https://www.ornitho.pl/index.php?m_id=94&amp;showback=stor&amp;backlink=skip&amp;sp_DChoice=offset&amp;sp_DOffset=15&amp;sp_SChoice=all&amp;sp_PChoice=place&amp;sp_P=297795&amp;sp_Info=Krak%C3%B3w+%5BE8N1F1%5D"><img
+                                                        title="Inne dane w tej lokalizacji" alt="Inne dane w tej lokalizacji"
+                                                        style="vertical-align:text-bottom;" border="0"
+                                                        src="https://cdnfiles2.biolovision.net/www.ornitho.pl/images/bird_list_place.gif"/></a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <div style="text-align:center;margin-top:2rem;margin-bottom:1.5rem"><input name="back" type="button" class="submit"
+                                                                                                           value="Powrót"
+                                                                                                           onclick="javascript:location='http://www.ornitho.pl/index.php?m_id=94&amp;p_c=3&amp;p_cc=-1&amp;sp_tg=1&amp;sp_DChoice=range&amp;sp_DFrom=05.12.2019&amp;sp_DTo=04.12.2020&amp;sp_DSeasonFromDay=1&amp;sp_DSeasonFromMonth=1&amp;sp_DSeasonToDay=31&amp;sp_DSeasonToMonth=12&amp;sp_DOffset=5&amp;sp_SChoice=species&amp;speciesFilter=&amp;sp_S=322&amp;sp_Cat[never]=1&amp;sp_Cat[veryrare]=1&amp;sp_Cat[rare]=1&amp;sp_Cat[unusual]=1&amp;sp_Cat[escaped]=1&amp;sp_Family=1&amp;sp_PChoice=canton&amp;sp_cC=0000010000000000&amp;sp_cCO=1&amp;sp_CommuneCounty=4&amp;sp_Commune=2216&amp;sp_Info=&amp;sp_P=0&amp;sp_Coord[W]=19.976075038164&amp;sp_Coord[S]=50.044171261831&amp;sp_Coord[E]=19.994044490096&amp;sp_Coord[N]=50.062140713763&amp;sp_Grid_Info=&amp;sp_Grid=0&amp;sp_AltitudeFrom=-5&amp;sp_AltitudeTo=4848&amp;sp_CommentValue=&amp;sp_OnlyAH=0&amp;sp_Ats=-00000&amp;sp_project=&amp;sp_FChoice=list&amp;sp_FDisplay=DATE_PLACE_SPECIES&amp;sp_DFormat=DESC&amp;sp_FOrderListSpecies=ALPHA&amp;sp_FListSpeciesChoice=DATA&amp;sp_DateSynth=04.12.2020&amp;sp_FOrderSynth=ALPHA&amp;sp_FGraphChoice=DATA&amp;sp_FGraphFormat=auto&amp;sp_FAltScale=250&amp;sp_FAltChoice=DATA&amp;sp_FMapFormat=none&amp;submit=Szukaj&amp;backlink=retn';"/>
+                                </div>
+
+                                <div style="margin-left:0.5rem;margin-right:0.5rem">
+                                    <script type="application/javascript"></script>
+                                    <div style="text-align:left;">
+                                        <div id="tabHMAP1"
+                                             style="float:left"
+                                             onclick="javascript:showMapPanel('1'); " class="bvPanelOFF">Zdjęcie lotnicze
+                                        </div>
+                                        <div id="tabHMAP6"
+                                             style="float:left"
+                                             onclick="javascript:showMapPanel('6'); " class="bvPanel">Mapa ukształtowania terenu
+                                        </div>
+                                        <div id="tabHMAP7"
+                                             style="float:left"
+                                             onclick="javascript:showMapPanel('7'); " class="bvPanel">Mapa województw
+                                        </div>
+                                        <div id="tabHMAP8"
+                                             style="float:left"
+                                             onclick="javascript:showMapPanel('8'); " class="bvPanel">Mapa krain geograficznych
+                                        </div>
+                                        <div id="tabHMAP5"
+                                             style="float:left"
+                                             onclick="javascript:showMapPanel('5'); if (window.MyOLinit){MyOLinit();}" class="bvPanel">Powiększenie
+                                        </div>
+                                        <div id="coord" style="text-align:right;float:right;padding-right:5px;"></div>
+                                    </div>
+                                    <div style="clear:both"></div>
+                                </div>
+                                <div class="bvPanelPanel"
+                                     style="background-color:transparent;padding:0;margin-left:0.5rem;margin-right:0.5rem;margin-top:0;padding-left:0;padding-right:0">
+                                    <div id="overs" class="bvPanelPanel"
+                                         style="background-color:transparent;margin-top:0;padding:0;position:relative; min-height:664px; z-index:10;overflow: hidden;">
+
+                                        <div
+                                                id="target"
+                                                style="z-index: 2; top: 527px; left: 414px; position: absolute;margin-top: 0.8rem;">
+                                            <img
+                                                    src="https://cdnfiles1.biolovision.net/common/images/google/map50gmg.png"
+                                                    alt=""
+                                                    title=""
+                                                    border="0"
+                                                    width="16"
+                                                    height="16"/>
+                                        </div>
+                                        <div style="" id="tabPMAP1">
+                                            <div
+                                                    class="bvPanelPanel"
+                                                    id="map1"
+                                                    style="padding:0;padding-top:0.8rem;margin-top:0;z-index:1;visibility:visible;height:86.910994764398;position:absolute;top:0;left:0">
+                                                <img
+                                                        style="max-width:100%"
+                                                        id="map_img_1"
+                                                        src="https://cdnfiles2.biolovision.net/www.ornitho.pl/images/map/aerial.jpg"
+                                                        alt="Zdjęcie lotnicze"
+                                                        title="Zdjęcie lotnicze"
+                                                        border="0"/>
+                                            </div>
+                                        </div>
+                                        <div style="display:none" id="tabPMAP6">
+                                            <div
+                                                    class="bvPanelPanel"
+                                                    id="map6"
+                                                    style="padding:0;padding-top:0.8rem;margin-top:0;z-index:1;visibility:visible;height:86.910994764398;position:absolute;top:0;left:0">
+                                                <img
+                                                        style="max-width:100%"
+                                                        id="map_img_6"
+                                                        src="https://cdnfiles2.biolovision.net/www.ornitho.pl/images/map/altitude.jpg"
+                                                        alt="Mapa ukształtowania terenu"
+                                                        title="Mapa ukształtowania terenu"
+                                                        border="0"/>
+                                            </div>
+                                        </div>
+                                        <div style="display:none" id="tabPMAP7">
+                                            <div
+                                                    class="bvPanelPanel"
+                                                    id="map7"
+                                                    style="padding:0;padding-top:0.8rem;margin-top:0;z-index:1;visibility:visible;height:86.910994764398;position:absolute;top:0;left:0">
+                                                <img
+                                                        style="max-width:100%"
+                                                        id="map_img_7"
+                                                        src="https://cdnfiles2.biolovision.net/www.ornitho.pl/images/map/region.jpg"
+                                                        alt="Mapa województw"
+                                                        title="Mapa województw"
+                                                        border="0"/>
+                                            </div>
+                                        </div>
+                                        <div style="display:none" id="tabPMAP8">
+                                            <div
+                                                    class="bvPanelPanel"
+                                                    id="map8"
+                                                    style="padding:0;padding-top:0.8rem;margin-top:0;z-index:1;visibility:visible;height:86.910994764398;position:absolute;top:0;left:0">
+                                                <img
+                                                        style="max-width:100%"
+                                                        id="map_img_8"
+                                                        src="https://cdnfiles2.biolovision.net/www.ornitho.pl/images/map/biozone.jpg"
+                                                        alt="Mapa krain geograficznych"
+                                                        title="Mapa krain geograficznych"
+                                                        border="0"/>
+                                            </div>
+                                        </div>
+                                        <div style="display:none;margin:0;padding:0;padding-top:0.5rem" class="bvPanelPanel" id="tabPMAP5">
+
+                                            <script src="https://cdnfiles1.biolovision.net/common/js/sprintf.js" type="application/javascript"></script>
+                                            <script src="https://cdnfiles1.biolovision.net/common/js/openlayers_2_13_1_m5.js"
+                                                    type="application/javascript"></script>
+                                            <script src="https://cdnfiles1.biolovision.net/common/js/proj4.js" type="application/javascript"></script>
+                                            <script src="https://cdnfiles1.biolovision.net/common/js/ol_map_obj_71.js" type="application/javascript"></script>
+                                            <script type="application/javascript"></script>
+
+                                            <div style="width:100%;margin:0px;padding:0px;text-align:left;height: 1.6rem;">
+                                                <div style="float:left;margin-left:0.4rem">
+                                                    <a class="alink" href="javascript:openlayerMap.setCenter(50.091666247153555,19.846049800150524);">[wycentruj
+                                                        mapę na wskaźniku]</a>
+                                                </div>
+                                                <div id="coord_ol" style="float:right;padding:0;text-align:right;padding-right:5px;"></div>
+                                            </div>
+
+                                            <div style="clear:both"></div>
+
+                                            <div style="float:left;width:764px;margin:0;padding:0px;text-align:left;">
+                                                <div id="map_ol"
+                                                     style="float:left;width:764px;height:calc(664px - 1.6rem); font-size: 12px; font-weight: bold; vertical-align: middle;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <script type="application/javascript"></script>
+                                </div>
+
+                                <div style="text-align:center;margin-top:2rem;margin-bottom:1.5rem"><input name="back" type="button" class="submit"
+                                                                                                           value="Powrót"
+                                                                                                           onclick="javascript:location='http://www.ornitho.pl/index.php?m_id=94&amp;p_c=3&amp;p_cc=-1&amp;sp_tg=1&amp;sp_DChoice=range&amp;sp_DFrom=05.12.2019&amp;sp_DTo=04.12.2020&amp;sp_DSeasonFromDay=1&amp;sp_DSeasonFromMonth=1&amp;sp_DSeasonToDay=31&amp;sp_DSeasonToMonth=12&amp;sp_DOffset=5&amp;sp_SChoice=species&amp;speciesFilter=&amp;sp_S=322&amp;sp_Cat[never]=1&amp;sp_Cat[veryrare]=1&amp;sp_Cat[rare]=1&amp;sp_Cat[unusual]=1&amp;sp_Cat[escaped]=1&amp;sp_Family=1&amp;sp_PChoice=canton&amp;sp_cC=0000010000000000&amp;sp_cCO=1&amp;sp_CommuneCounty=4&amp;sp_Commune=2216&amp;sp_Info=&amp;sp_P=0&amp;sp_Coord[W]=19.976075038164&amp;sp_Coord[S]=50.044171261831&amp;sp_Coord[E]=19.994044490096&amp;sp_Coord[N]=50.062140713763&amp;sp_Grid_Info=&amp;sp_Grid=0&amp;sp_AltitudeFrom=-5&amp;sp_AltitudeTo=4848&amp;sp_CommentValue=&amp;sp_OnlyAH=0&amp;sp_Ats=-00000&amp;sp_project=&amp;sp_FChoice=list&amp;sp_FDisplay=DATE_PLACE_SPECIES&amp;sp_DFormat=DESC&amp;sp_FOrderListSpecies=ALPHA&amp;sp_FListSpeciesChoice=DATA&amp;sp_DateSynth=04.12.2020&amp;sp_FOrderSynth=ALPHA&amp;sp_FGraphChoice=DATA&amp;sp_FGraphFormat=auto&amp;sp_FAltScale=250&amp;sp_FAltChoice=DATA&amp;sp_FMapFormat=none&amp;submit=Szukaj&amp;backlink=retn';"/>
+                                </div>
+
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- footer start here -->
+                </td>
+            </tr>
+        </table>
+        <div class="copyrightline"><a class="alink" href="https://www.biolovision.net">Biolovision S&#224;rl</a> (Switzerland), 2003-2020</div>
+    </div>
+    <!-- end main table -->
+
+</div>
+</body>
+<!-- footer end here -->
+</html>

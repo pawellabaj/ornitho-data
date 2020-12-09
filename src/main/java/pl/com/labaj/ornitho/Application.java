@@ -1,10 +1,13 @@
 package pl.com.labaj.ornitho;
 
 import pl.com.labaj.ornitho.builder.gpx.GPXBuilder;
-import pl.com.labaj.ornitho.io.FileUtils;
+import pl.com.labaj.ornitho.io.DocumentLoader;
+import pl.com.labaj.ornitho.io.PageLoader;
+import pl.com.labaj.ornitho.io.PathGenerator;
+import pl.com.labaj.ornitho.io.gpx.GPXExtensions;
 import pl.com.labaj.ornitho.io.gpx.GPXWriter;
-import pl.com.labaj.ornitho.io.page.PageLoader;
 import pl.com.labaj.ornitho.model.Observations;
+import pl.com.labaj.ornitho.parser.DateRangeParser;
 import pl.com.labaj.ornitho.parser.LocationParser;
 import pl.com.labaj.ornitho.parser.ObservationsParser;
 import pl.com.labaj.ornitho.parser.PageReader;
@@ -15,7 +18,7 @@ public class Application {
 
     private final PageReader<Observations> observationsReader;
     private final GPXBuilder gpxBuilder;
-    private final FileUtils fileUtils;
+    private final PathGenerator pathGenerator;
 
     public static void main(String[] args) {
         if (args.length == 0) {
@@ -26,31 +29,35 @@ public class Application {
 
         var positionParser = new PositionParser();
         var locationParser = new LocationParser(positionParser);
-
         var subjectParser = new SubjectParser();
-        var gpxWriter = new GPXWriter();
+        var dateRangeParser = new DateRangeParser();
+
         var locationReader = new PageReader<>(pageLoader, locationParser);
 
-        var observationsParser = new ObservationsParser(locationReader, subjectParser);
+        var observationsParser = new ObservationsParser(locationReader, subjectParser, dateRangeParser);
         var observationsReader = new PageReader<>(pageLoader, observationsParser);
 
-        var fileUtils = new FileUtils();
-        var gpxBuilder = new GPXBuilder(fileUtils, gpxWriter);
+        var documentLoader = new DocumentLoader();
+        var gpxFileUtils = new GPXExtensions(documentLoader);
+        var gpxWriter = new GPXWriter();
+        var gpxBuilder = new GPXBuilder(gpxFileUtils, gpxWriter);
 
-        var application = new Application(observationsReader, fileUtils, gpxBuilder);
+        var pathGenerator = new PathGenerator();
+
+        var application = new Application(observationsReader, pathGenerator, gpxBuilder);
 
         application.run(args[0]);
     }
 
-    public Application(PageReader<Observations> observationsReader, FileUtils fileUtils, GPXBuilder gpxBuilder) {
+    public Application(PageReader<Observations> observationsReader, PathGenerator pathGenerator, GPXBuilder gpxBuilder) {
         this.observationsReader = observationsReader;
         this.gpxBuilder = gpxBuilder;
-        this.fileUtils = fileUtils;
+        this.pathGenerator = pathGenerator;
     }
 
-    private void run(String pageUrl) {
+    void run(String pageUrl) {
         var observations = observationsReader.read(pageUrl);
-        var path = fileUtils.getPath(observations, "gpx");
+        var path = pathGenerator.getPath(observations, "gpx");
         gpxBuilder.buildAndSave(observations, path);
     }
 }

@@ -8,21 +8,19 @@ import java.util.regex.Pattern;
 import static com.grum.geocalc.Coordinate.fromDMS;
 import static java.lang.Double.parseDouble;
 import static java.lang.String.format;
+import static java.util.Objects.nonNull;
 import static java.util.regex.Pattern.compile;
 
 public class PositionParser {
-    private static final Pattern COORDINATE_PATTERN = compile("(?<degrees>\\d{1,3})°(?<minutes>\\d{1,2})'(?<seconds>\\d{1,2}\\.?\\d*)''\\s+(?<hemisphere>[NESW])\\s*");
+    private static final Pattern COORDINATE_PATTERN = compile("(?<degrees>\\d{1,3})°((?<minutes>\\d{1,2})')?((?<seconds>\\d{1,2}\\.?\\d*)'')?\\s+(?<hemisphere>[NESW])");
 
-    public Point parse(String[] coordinates) {
-        var longitude = parseCoordinate(coordinates[0]);
-        var latitude = parseCoordinate(coordinates[1]);
-
-        return Point.at(latitude, longitude);
+     Point parse(String latitude, String longitude) {
+         return Point.at(parseCoordinate(latitude), parseCoordinate(longitude));
     }
 
     private Coordinate parseCoordinate(String coordinate) {
         try {
-            var matcher = COORDINATE_PATTERN.matcher(coordinate);
+            var matcher = COORDINATE_PATTERN.matcher(coordinate.trim());
             //noinspection ResultOfMethodCallIgnored
             matcher.find();
 
@@ -32,12 +30,17 @@ public class PositionParser {
             var hemisphere = matcher.group("hemisphere");
 
             var sign = sign(hemisphere);
-            return fromDMS(parseDouble(degrees) * sign,
-                    parseDouble(minutes) * sign,
-                    parseDouble(seconds) * sign);
+          
+            return fromDMS(parseOrZero(degrees) * sign,
+                    parseOrZero(minutes),
+                    parseOrZero(seconds));
         } catch (NumberFormatException | IllegalStateException e) {
             throw new OrnithoParserException(format("Cannot parse [%s]", coordinate), e);
         }
+    }
+
+    private double parseOrZero(String text) {
+        return nonNull(text) ? parseDouble(text) : 0;
     }
 
     private int sign(String direction) {

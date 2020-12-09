@@ -5,15 +5,18 @@
     <modelVersion>4.0.0</modelVersion>
 
     <name>Ornitho Data</name>
+    <url>https://github.com/pawellabaj/ornitho-data</url>
+    <description>Get useful data from ornitho for a bird watching</description>
+
     <groupId>pl.com.labaj.ornitho</groupId>
     <artifactId>ornitho</artifactId>
     <version>0.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven-jar-plugin.mainClass>pl.com.labaj.ornitho.Application</maven-jar-plugin.mainClass>
     </properties>
 
@@ -51,10 +54,28 @@
         </dependency>
 
         <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.7.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>5.7.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-junit-jupiter</artifactId>
             <version>3.6.28</version>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.jupiter</groupId>
+                    <artifactId>junit-jupiter-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
@@ -64,25 +85,39 @@
         </dependency>
     </dependencies>
 
-    <repositories>
-        <repository>
-            <id>mulesoft</id>
-            <name>MuleSoft Public Repository</name>
-            <url>https://repository.mulesoft.org/nexus/content/repositories/public/</url>
-        </repository>
-    </repositories>
-
     <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>3.0.0-M5</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
         <plugins>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.5</version>
+                <executions>
+                    <execution>
+                        <id>jacoco-prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                        <configuration>
+                            <propertyName>surefireArgLine</propertyName>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>jacoco-site</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <argLine>@{surefireArgLine} -Xmx1536m</argLine>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -113,8 +148,10 @@
                 <sonar.projectKey>pawellabaj_ornitho-data</sonar.projectKey>
                 <sonar.componentKey>pawellabaj_ornitho-data:${project.artifactId}</sonar.componentKey>
                 <sonar.moduleKey>ornitho-data:${project.artifactId}</sonar.moduleKey>
-                <sonar.coverage.exclusions>**/pom.xml</sonar.coverage.exclusions>
-
+                <sonar.coverage.exclusions>
+                    pom.xml,
+                    pl/com/labaj/ornitho/**/*Exception.java
+                </sonar.coverage.exclusions>
             </properties>
 
             <build>
@@ -134,7 +171,14 @@
                     </plugin>
                 </plugins>
             </build>
-
         </profile>
     </profiles>
+
+    <repositories>
+        <repository>
+            <id>mulesoft</id>
+            <name>MuleSoft Public Repository</name>
+            <url>https://repository.mulesoft.org/nexus/content/repositories/public/</url>
+        </repository>
+    </repositories>
 </project>

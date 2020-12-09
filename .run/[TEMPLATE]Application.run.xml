@@ -1,0 +1,15 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="[TEMPLATE]Application" type="Application" factoryName="Application">
+    <option name="ALTERNATIVE_JRE_PATH" value="11" />
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <option name="MAIN_CLASS_NAME" value="pl.com.labaj.ornitho.Application" />
+    <module name="ornitho" />
+    <option name="PROGRAM_PARAMETERS" value="$Prompt$" />
+    <shortenClasspath name="ARGS_FILE" />
+    <option name="VM_PARAMETERS" value="-Dlogin=$ORNITHO_LOGIN$ -Dpwd=$MD5_ORNITHO_PWD$ -Dorg.slf4j.simpleLogger.defaultLogLevel=debug" />
+    <option name="WORKING_DIRECTORY" value="$ProjectFileDir$" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

@@ -1,6 +1,6 @@
 package pl.com.labaj.ornitho.parser;
 
-import pl.com.labaj.ornitho.io.page.PageLoader;
+import pl.com.labaj.ornitho.io.PageLoader;
 
 public class PageReader<R> {
     private final PageLoader pageLoader;
@@ -11,7 +11,7 @@ public class PageReader<R> {
         this.parser = parser;
     }
 
-    public final R read(String pageUrl) {
+    public R read(String pageUrl) {
         var document = pageLoader.load(pageUrl);
         return parser.parse(document);
     }
