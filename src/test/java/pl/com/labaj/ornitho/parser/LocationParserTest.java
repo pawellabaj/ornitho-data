@@ -25,15 +25,15 @@ class LocationParserTest {
                         new Location("Mielec [F8D4R3]",
                                 Point.at(Coordinate.fromDegrees(50.29441111111111), Coordinate.fromDegrees(21.422641666666667)),
                                 BoundingArea.at(
-                                        Point.at(Coordinate.fromDegrees(50.29890749956795), Coordinate.fromDegrees(21.429680997045164)),
-                                        Point.at(Coordinate.fromDegrees(50.289914297674), Coordinate.fromDegrees(21.415603666757065))))),
+                                        Point.at(Coordinate.fromDegrees(50.298917584128965), Coordinate.fromDegrees(21.42969678719447)),
+                                        Point.at(Coordinate.fromDegrees(50.289904211204465), Coordinate.fromDegrees(21.415587882582727))))),
                 Arguments.of(
                         "ornitho/location/krakow.html",
                         new Location("Kraków [E8N1F1]",
                                 Point.at(Coordinate.fromDegrees(50.09166388888889), Coordinate.fromDegrees(19.84604722222222)),
                                 BoundingArea.at(
-                                        Point.at(Coordinate.fromDegrees(50.09616027886941), Coordinate.fromDegrees(19.853056721314495)),
-                                        Point.at(Coordinate.fromDegrees(50.08716707697489), Coordinate.fromDegrees(19.83903903846342)))))
+                                        Point.at(Coordinate.fromDegrees(50.09617036343726), Coordinate.fromDegrees(19.8530724445376)),
+                                        Point.at(Coordinate.fromDegrees(50.087156990512185), Coordinate.fromDegrees(19.83902332114729)))))
         );
     }
 

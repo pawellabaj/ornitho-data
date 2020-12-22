@@ -6,7 +6,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import pl.com.labaj.ornitho.model.Location;
 
-import static com.grum.geocalc.EarthCalc.around;
+import static com.grum.geocalc.EarthCalc.gcd.around;
 
 @Slf4j
 public class LocationParser implements DocumentParser<Location> {

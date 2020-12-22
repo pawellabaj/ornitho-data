@@ -44,7 +44,7 @@
         <dependency>
             <groupId>com.github.grumlimited</groupId>
             <artifactId>geocalc</artifactId>
-            <version>0.5.7</version>
+            <version>0.6</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.slf4j</groupId>
@@ -176,9 +176,9 @@
 
     <repositories>
         <repository>
-            <id>mulesoft</id>
-            <name>MuleSoft Public Repository</name>
-            <url>https://repository.mulesoft.org/nexus/content/repositories/public/</url>
+            <id>jitpack.io</id>
+            <name>JitPack Repository</name>
+            <url>https://jitpack.io</url>
         </repository>
     </repositories>
 </project>
