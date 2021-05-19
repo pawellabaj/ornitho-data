@@ -14,7 +14,7 @@ import static java.util.regex.Pattern.compile;
 public class PositionParser {
     private static final Pattern COORDINATE_PATTERN = compile("(?<degrees>\\d{1,3})°((?<minutes>\\d{1,2})')?((?<seconds>\\d{1,2}\\.?\\d*)'')?\\s+(?<hemisphere>[NESW])");
 
-     Point parse(String latitude, String longitude) {
+     public Point parse(String latitude, String longitude) {
          return Point.at(parseCoordinate(latitude), parseCoordinate(longitude));
     }
 

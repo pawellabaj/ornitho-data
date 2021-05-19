@@ -1,0 +1,14 @@
+<extensions>
+    <line xmlns="http://www.topografix.com/GPX/gpx_style/0/2" xmlns:locus="http://www.locusmap.eu">
+        <color>FFFFFF</color>
+        <opacity>0.00</opacity>
+        <width>1.0</width>
+        <extensions>
+            <locus:lsColorBase>#00FFFFFF</locus:lsColorBase>
+            <locus:lsColorSymbol>#00FFFFFF</locus:lsColorSymbol>
+            <locus:lsWidth>1.0</locus:lsWidth>
+            <locus:lsUnits>PIXELS</locus:lsUnits>
+            <locus:lsColorOutline>#00FFFFFF</locus:lsColorOutline>
+        </extensions>
+    </line>
+</extensions>
